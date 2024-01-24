@@ -39,10 +39,7 @@ function ManageUsers() {
 
       formData.append("newUser", JSON.stringify(newUser));
       formData.append("image", file);
-      // const requestData = {
-      //   newUser: newUser,
-      //   formData: formData,
-      // };
+
       await axios.post("http://localhost:8080/user", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
