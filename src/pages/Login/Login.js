@@ -1,5 +1,33 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import images from "~/assets/images";
+import config from "~/config";
+import { useLogin } from "~/hooks";
 function Login() {
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+  const { login } = useLogin();
+  const navigate = useNavigate();
+  const handleChange = (e) => {
+    const { name } = e.target;
+    let { value } = e.target;
+
+    setData((prev) => ({ ...prev, [name]: value }));
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await login(data);
+      alert("Đăng nhập thành công");
+    } catch (error) {
+      console.log(error);
+    }
+
+    navigate(config.routes.home);
+  };
   return (
     <div className="border-red-500 bg-gray-200  flex items-center justify-center">
       <div className="bg-gray-100 p-1 flex rounded-2xl shadow-lg max-w-4xl">
@@ -8,20 +36,22 @@ function Login() {
         </div>
         <div className="md:w-1/2 px-5">
           <h2 className="text-2xl font-bold text-gray-700">Đăng nhập</h2>
-          {/* <p className="text-sm mt-4 text-gray-700">
-            If you have an account, please login
-          </p> */}
-          <form className="mt-6" action="#" method="POST">
+
+          <form
+            className="mt-6"
+            action="#"
+            method="POST"
+            onSubmit={handleSubmit}
+          >
             <div>
               <label className="block text-left text-gray-700">Email</label>
               <input
                 type="email"
-                name=""
-                id=""
+                name="email"
+                value={data.email}
+                onChange={handleChange}
                 placeholder="Nhập vào địa chỉ Email"
                 className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500 focus:bg-white focus:outline-none"
-                // autofocus
-                // autocomplete
                 required
               />
             </div>
@@ -30,9 +60,9 @@ function Login() {
               <label className="block text-left text-gray-700">Mật khẩu</label>
               <input
                 type="password"
-                s
-                name=""
-                id=""
+                name="password"
+                value={data.password}
+                onChange={handleChange}
                 placeholder="Nhập vào mật khẩu"
                 minlength="6"
                 className="w-full px-4 py-3 rounded-lg bg-gray-200 mt-2 border focus:border-blue-500

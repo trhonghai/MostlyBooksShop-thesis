@@ -4,9 +4,9 @@ import Sidebar from "./Sidebar";
 
 function DefaultLayout({ children }) {
   return (
-    <div className=" flex flex-col min-h-screen bg-gray-200">
+    <div className=" flex flex-col min-h-screen bg-white">
       <Header />
-      <div className="flex-1 align-center m-6 ">{children}</div>
+      <div className="flex-1 align-center">{children}</div>
       <Footer />
     </div>
   );
