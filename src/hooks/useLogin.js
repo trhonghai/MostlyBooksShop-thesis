@@ -9,7 +9,7 @@ function useLogin() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:8080/users/authentication",
+        "http://localhost:8080/api/users/authentication",
         data
       );
       const { access_token, refresh_token } = response.data;

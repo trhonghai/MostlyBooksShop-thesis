@@ -4,11 +4,12 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import images from "~/assets/images";
 
-const images = [
-  "https://ctdemocracycenter.org/wp-content/uploads/2022/08/FT-banner-1100x500.jpg",
-  "https://images-production.bookshop.org/spree/affiliate_profiles/banner_images/1163/original/RWC_Bookshop_Banner.jpg?1669827673",
-  "https://hayyjameel.org/wp-content/uploads/2023/10/HE_banner-02-aspect-ratio-0-0-1100x500.png",
+const fakeimages = [
+  "https://pibook.vn/upload/banner/truy%E1%BB%87n%20tranh%20tu%E1%BA%A7n.png",
+  "https://pibook.vn/upload/banner/banner%20t%E1%BA%BFt.png",
+  images.Banner,
   // Add more images here
 ];
 
@@ -39,9 +40,9 @@ const Banner = () => {
   };
 
   return (
-    <div className="inline-block w-4/5 h-1/4 sm:h-1/3 md:h-1/2 lg:h-3/4 xl:h-full">
+    <div className="container w-10/12 inline-block h-1/4 sm:h-1/3 md:h-1/2 lg:h-2/4 xl:h-3/4">
       <Slider {...settings}>
-        {images.map((img, idx) => (
+        {fakeimages.map((img, idx) => (
           <div
             key={idx}
             className="w-full h-full hover:scale-105 transition-transform duration-200 ease-out"

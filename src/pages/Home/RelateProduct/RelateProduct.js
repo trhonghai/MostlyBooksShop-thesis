@@ -8,11 +8,11 @@ function FeatureProduct() {
     superLargeDesktop: {
       // the naming can be any, depends on you.
       breakpoint: { max: 4000, min: 3000 },
-      items: 5,
+      items: 4,
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 5,
+      items: 4,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -24,11 +24,9 @@ function FeatureProduct() {
     },
   };
   return (
-    <div className="mt-10 flex justify-center">
-      <div className="w-10/12 overflow-hidden">
-        <h2 class="text-2xl pl-10 text-left font-bold text-[#327580] sm:text-3xl">
-          Sản phẩm nổi bật
-        </h2>
+    <div className="mt-2 flex justify-center">
+      <div className="w-full overflow-hidden">
+        <h2 class="text-xl  text-left font-sans">SẢN PHẨM LIÊN QUAN</h2>
         <Carousel responsive={responsive}>
           <div className=" w-full p-5 h-full ">
             <div class="group p-5 border shadow-lg rounded-lg border shadow-lg h-full ">

@@ -7,6 +7,7 @@ import Home from "~/pages/Home";
 import Login from "~/pages/Login/Login";
 import DefaultLayout from "~/layout/DefaultLayout";
 import Register from "~/pages/Register";
+import BookDetails from "~/pages/BookDetails";
 
 const privateRoutes = [
   { path: config.routes.users, component: ManageUsers, layout: AdminLayout },
@@ -26,6 +27,7 @@ const publicRoutes = [
   { path: config.routes.home, component: Home, layout: DefaultLayout },
   { path: config.routes.login, component: Login, layout: DefaultLayout },
   { path: config.routes.register, component: Register, layout: DefaultLayout },
+  { path: config.routes.book, component: BookDetails, layout: DefaultLayout },
 ];
 
 export { privateRoutes, publicRoutes };
